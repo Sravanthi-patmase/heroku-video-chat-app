@@ -40,6 +40,7 @@ io.on("connection", (socket) => {
 
 
     socket.on( 'sdp', ( data ) => {
+        console.log('sdp connected')
         socket.to( data.to ).emit( 'sdp', { description: data.description, sender: data.sender } );
     } );
 
