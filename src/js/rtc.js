@@ -424,10 +424,12 @@
              e.preventDefault();
  
              if ( screen && screen.getVideoTracks().length && screen.getVideoTracks()[0].readyState != 'ended' ) {
+                 console.log('RR')
                  stopSharingScreen();
              }
  
              else {
+                 console.log('GGGG')
                  shareScreen();
              }
          } );

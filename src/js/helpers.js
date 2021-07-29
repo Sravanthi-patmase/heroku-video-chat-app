@@ -193,6 +193,7 @@ export default  {
         let shareIconElem = document.querySelector( '#share-screen' );
 
         if ( share ) {
+            console.log('FFFFFF')
             shareIconElem.setAttribute( 'title', 'Stop sharing screen' );
             shareIconElem.children[0].classList.add( 'text-primary' );
             shareIconElem.children[0].classList.remove( 'text-white' );
