@@ -57,10 +57,11 @@ export default  {
         if ( this.userMediaAvailable() ) {
             return navigator.mediaDevices.getUserMedia( {
                 video: true,
-                audio: {
-                    echoCancellation: true,
-                    noiseSuppression: true
-                }
+                audio: true
+                // audio: {
+                //     echoCancellation: true,
+                //     noiseSuppression: true
+                // }
             } );
         }
 
