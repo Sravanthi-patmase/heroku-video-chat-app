@@ -49,13 +49,13 @@ export default  {
 
 
     userMediaAvailable() {
-        return !!( navigator.mediaDevices || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia );
+        return !!( navigator.mediaDevices.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia );
     },
 
 
     getUserFullMedia() {
         
-            if ( this.userMediaAvailable() ) {
+            // if ( this.userMediaAvailable() ) {
                 try{
                     return navigator.mediaDevices.getUserMedia( {
                         video: true,
@@ -80,7 +80,7 @@ export default  {
                           break;
                       }
                 }
-            }
+            // }
             // else {
             //     throw new Error( 'User media not available' );
             // }
