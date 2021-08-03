@@ -54,35 +54,37 @@ export default  {
 
 
     getUserFullMedia() {
-        try{
+        
             if ( this.userMediaAvailable() ) {
-                return navigator.mediaDevices.getUserMedia( {
-                    video: true,
-                    audio: {
-                        echoCancellation: true,
-                        noiseSuppression: true
-                    }
-                } );
+                try{
+                    return navigator.mediaDevices.getUserMedia( {
+                        video: true,
+                        audio: {
+                            echoCancellation: true,
+                            noiseSuppression: true
+                        }
+                    } );
+                }catch(e){
+                    console.log('TTTT')
+                    switch(e.name) {
+                        case "NotFoundError":
+                          alert("Unable to open your call because no camera and/or microphone" +
+                                "were found.");
+                          break;
+                        case "SecurityError":
+                        case "PermissionDeniedError":
+                          // Do nothing; this is the same as the user canceling the call.
+                          break;
+                        default:
+                          alert("Error opening your camera and/or microphone: " + e.message);
+                          break;
+                      }
+                }
             }
             // else {
             //     throw new Error( 'User media not available' );
             // }
-        }catch(e){
-            console.log('TTTT')
-            switch(e.name) {
-                case "NotFoundError":
-                  alert("Unable to open your call because no camera and/or microphone" +
-                        "were found.");
-                  break;
-                case "SecurityError":
-                case "PermissionDeniedError":
-                  // Do nothing; this is the same as the user canceling the call.
-                  break;
-                default:
-                  alert("Error opening your camera and/or microphone: " + e.message);
-                  break;
-              }
-        }
+        
     },
 
 
