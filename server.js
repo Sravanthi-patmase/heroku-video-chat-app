@@ -46,6 +46,7 @@ io.on("connection", (socket) => {
 
 
     socket.on( 'ice candidates', ( data ) => {
+        console.log('onicecand')
         socket.to( data.to ).emit( 'ice candidates', { candidate: data.candidate, sender: data.sender } );
     } );
 

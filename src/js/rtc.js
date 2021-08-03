@@ -5,7 +5,7 @@
  import h from './helpers.js';
 
  window.addEventListener( 'load', () => {
-     console.log('rtc 1')
+     console.log('rtc 111',location.href)
      const room = h.getQString( location.href, 'room' );
      const username = sessionStorage.getItem( 'username' );
  
@@ -27,7 +27,6 @@
          var pc = [];
  
          let socket = io( '/' );
- 
          var socketId = '';
          var myStream = '';
          var screen = '';
