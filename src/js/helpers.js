@@ -49,7 +49,7 @@ export default  {
 
 
     userMediaAvailable() {
-        return !!( navigator.mediaDevices.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia );
+        return !!( navigator.mediaDevices || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia );
     },
 
 
