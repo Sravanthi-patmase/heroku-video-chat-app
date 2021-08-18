@@ -8,6 +8,7 @@
       slice = [].slice;
   
     autoLink = function () {
+      console.log("autolink AAAAAAAAAAAAAAAAAAAAAAAAAAAA")
       var callback, k, linkAttributes, option, options, pattern, v;
       options = 1 <= arguments.length ? slice.call( arguments, 0 ) : [];
       pattern = /(^|[\s\n]|<[A-Za-z]*\/?>)((?:https?|ftp):\/\/[\-A-Z0-9+\u0026\u2019@#\/%?=()~_|!:,.;]*[\-A-Z0-9+\u0026@#\/%=~()_|])/gi;

@@ -52,10 +52,8 @@ export default  {
         return !!( navigator.mediaDevices.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia );
     },
 
-
     getUserFullMedia() {
-        
-            // if ( this.userMediaAvailable() ) {
+            if ( this.userMediaAvailable() ) {
                 try{
                     return navigator.mediaDevices.getUserMedia( {
                         video: true,
@@ -80,10 +78,10 @@ export default  {
                           break;
                       }
                 }
-            // }
-            // else {
-            //     throw new Error( 'User media not available' );
-            // }
+            }
+            else {
+                throw new Error( 'User media not available' );
+            }
         
     },
 
@@ -169,7 +167,6 @@ export default  {
 
         let rowDiv = document.createElement( 'div' );
         rowDiv.className = `row ${ contentAlign } mb-2`;
-
 
         colDiv.appendChild( infoDiv );
         rowDiv.appendChild( colDiv );

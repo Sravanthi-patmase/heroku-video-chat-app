@@ -8,7 +8,7 @@
      console.log('rtc 111',location.href)
      const room = h.getQString( location.href, 'room' );
      const username = sessionStorage.getItem( 'username' );
- 
+    console.log(room,'YYYYYYYYYY')
      if ( !room ) {
          document.querySelector( '#room-create' ).attributes.removeNamedItem( 'hidden' );
      }
